@@ -18,7 +18,7 @@
 
 \newcommand{\myname}{Tanay Gavankar}
 \newcommand{\myandrew}{tgavanka@andrew.cmu.edu}
-\newcommand{\myhwnum}{Homework 4}
+\newcommand{\myhwnum}{4}
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{5pt plus 1pt}
@@ -39,7 +39,7 @@
 
 \thispagestyle{plain}
 \begin{center}                      % Center the following lines
-{\Large 11-414 Assignment \myhwnum} \\
+{\Large 15-414 Assignment \myhwnum} \\
 \myname \\
 \myandrew \\
 Due: 11/14/12 \\
@@ -85,7 +85,7 @@ Due: 11/14/12 \\
 $x = T$, $y = T$, $z = T$ satisfies both. 
 
 \part{c}
-Consider $x=F$, $y=1$, $z=1$. In this case, the first statement is false while the second is true.
+Consider $x=0$, $y=1$, $z=1$. In this case, the first statement is false while the second is true.
 
 
 \question{2}{Normal Forms}
@@ -128,16 +128,109 @@ Consider $x=F$, $y=1$, $z=1$. In this case, the first statement is false while t
 \equiv (((p_1 \vee p_2) \vee \neg p_3) \wedge ((p_1 \vee p_2) \vee \neg q_3) \wedge ((p_1 \vee \neg q_2) \vee \neg p_3)\\
 \wedge ((q_1 \vee p_2) \vee \neg q_3) \wedge ((q_1 \vee \neg q_2) \vee \neg p_3) \wedge ((q_1 \vee \neg q_2) \vee \neg q_3)\\
 \\
-\equiv ((p_1 \vee p_2 \vee \neg p_3) \wedge (p_1 \vee p_2 \vee \neg q_3) \wedge (p_1 \vee \neg q_2 \vee \neg p_3)\\
+\equiv (p_1 \vee p_2 \vee \neg p_3) \wedge (p_1 \vee p_2 \vee \neg q_3) \wedge (p_1 \vee \neg q_2 \vee \neg p_3)\\
 \wedge (q_1 \vee p_2 \vee \neg q_3) \wedge (q_1 \vee \neg q_2 \vee \neg p_3) \wedge (q_1 \vee \neg q_2 \vee \neg q_3)\\
 \end{eqnarray*}
 
 \part{2}
 \begin{eqnarray*}
 ((p_1 \vee \neg p_2) \wedge (\neg p_3 \vee p_4)) \leftrightarrow (p_5 \wedge \neg p_6)\\
+(\neg ((p_1 \vee \neg p_2) \wedge (\neg p_3 \vee p_4)) \vee (p_5 \wedge \neg p_6)) \wedge (((p_1 \vee \neg p_2) \wedge (\neg p_3 \vee p_4)) \vee \neg (p_5 \wedge \neg p_6))\\
+((\neg (p_1 \vee \neg p_2) \vee \neg (\neg p_3 \vee p_4)) \vee (p_5 \wedge \neg p_6)) \wedge (((p_1 \vee \neg p_2) \wedge (\neg p_3 \vee p_4)) \vee (\neg p_5 \vee \neg \neg p_6))\\
+(((\neg p_1 \wedge\neg \neg p_2) \vee (\neg \neg p_3 \wedge \neg p_4)) \vee (p_5 \wedge \neg p_6)) \wedge (((p_1 \vee \neg p_2) \wedge (\neg p_3 \vee p_4)) \vee (\neg p_5 \vee \neg \neg p_6))\\
+(((\neg p_1 \wedge p_2) \vee (p_3 \wedge \neg p_4)) \vee (p_5 \wedge \neg p_6)) \wedge (((p_1 \vee \neg p_2) \wedge (\neg p_3 \vee p_4)) \vee (\neg p_5 \vee p_6))\\
+((\neg p_1 \wedge p_2) \vee (p_3 \wedge \neg p_4) \vee (p_5 \wedge \neg p_6)) \wedge (((p_1 \vee \neg p_2) \wedge (\neg p_3 \vee p_4)) \vee \neg p_5 \vee p_6)\\
+\end{eqnarray*}
+
+\begin{eqnarray*}
+g_1 \leftrightarrow (\neg p_1 \wedge p_2)\\
+\equiv (\neg g_1 \vee \neg p_1) \wedge (\neg g_1 \vee p_2) \wedge (\neg \neg p_1 \vee \neg p_2 \vee g_1)\\
+\equiv (\neg g_1 \vee \neg p_1) \wedge (\neg g_1 \vee p_2) \wedge (p_1 \vee \neg p_2 \vee g_1)\\
+\end{eqnarray*}
+
+\begin{eqnarray*}
+g_2 \leftrightarrow (p_3 \wedge \neg p_4)\\
+\equiv (\neg g_2 \vee p_3) \wedge (\neg g_2 \vee \neg p_4) \wedge (\neg p_3 \vee \neg \neg p_4 \vee g_2)\\
+\equiv (\neg g_2 \vee p_3) \wedge (\neg g_2 \vee \neg p_4) \wedge (\neg p_3 \vee p_4 \vee g_2)\\
+\end{eqnarray*}
+
+\begin{eqnarray*}
+g_3 \leftrightarrow (p_5 \wedge \neg p_6)\\
+\equiv (\neg g_3 \vee p_5) \wedge (\neg g_3 \vee \neg p_6) \wedge (\neg p_5 \vee \neg \neg p_6 \vee g_3)\\
+\equiv (\neg g_3 \vee p_5) \wedge (\neg g_3 \vee \neg p_6) \wedge (\neg p_5 \vee p_6 \vee g_3)\\
+\end{eqnarray*}
+
+\begin{eqnarray*}
+g_4 \leftrightarrow (p_1 \wedge \neg p_2)\\
+\equiv (\neg g_4 \vee p_1) \wedge (\neg g_4 \vee \neg p_2) \wedge (\neg p_1 \vee \neg \neg p_2 \vee g_4)\\
+\equiv (\neg g_4 \vee p_1) \wedge (\neg g_4 \vee \neg p_2) \wedge (\neg p_1 \vee p_2 \vee g_4)\\
+\end{eqnarray*}
+
+\begin{eqnarray*}
+g_5 \leftrightarrow (\neg p_3 \wedge p_4)\\
+\equiv (\neg g_5 \vee \neg p_3) \wedge (\neg g_5 \vee p_4) \wedge (\neg \neg p_3 \vee \neg p_4 \vee g_5)\\
+\equiv (\neg g_5 \vee \neg p_3) \wedge (\neg g_5 \vee p_4) \wedge (p_3 \vee \neg p_4 \vee g_5)\\
+\end{eqnarray*}
+
+\begin{eqnarray*}
+((p_1 \vee \neg p_2) \wedge (\neg p_3 \vee p_4)) \leftrightarrow (p_5 \wedge \neg p_6)\\
+\equiv ((\neg p_1 \wedge p_2) \vee (p_3 \wedge \neg p_4) \vee (p_5 \wedge \neg p_6)) \wedge (((p_1 \vee \neg p_2) \wedge (\neg p_3 \vee p_4)) \vee \neg p_5 \vee p_6)\\
+\equiv (g_1 \vee g_2 \vee g_3) \wedge (g_4 \vee \neg p_5 \vee p_6) \wedge (g_5 \vee \neg p_5 \vee p_6))\\
+\wedge (\neg g_1 \vee \neg p_1) \wedge (\neg g_1 \vee p_2) \wedge (p_1 \vee \neg p_2 \vee g_1) \\
+\wedge (\neg g_2 \vee p_3) \wedge (\neg g_2 \vee \neg p_4) \wedge (\neg p_3 \vee p_4 \vee g_2) \\
+\wedge (\neg g_3 \vee p_5) \wedge (\neg g_3 \vee \neg p_6) \wedge (\neg p_5 \vee p_6 \vee g_3) \\
+\wedge (\neg g_4 \vee p_1) \wedge (\neg g_4 \vee \neg p_2) \wedge (\neg p_1 \vee p_2 \vee g_4) \\
+\wedge (\neg g_5 \vee \neg p_3) \wedge (\neg g_5 \vee p_4) \wedge (p_3 \vee \neg p_4 \vee g_5)\\
 \end{eqnarray*}
 
 \question{3}{Satisfiability Checking}
+\part{a}
+Consider clause $q$.
+We can say $C_1 \equiv p \vee q$ by the first clause, and so, $C'_1 \equiv p$. Also, $C_2 \equiv F \vee \neg q$ by the second clause, and so, $C'_2 \equiv F$. This means we can replace clauses 1 and 2 with the clause $C'_1 \vee C'_2 \equiv p \vee F \equiv p$ by the resolution rule.
 
+This makes our set of clauses: $\{p, \neg p \vee q \vee \neg l, r \vee l, \neg r \vee \neg l, \neg r \vee \neg p\}$.
+
+Next, perform the same steps as above. $C_1 \equiv F \vee P$, so $C'_1 = F$, and $C_2 \equiv q \vee \neg l \vee \neg p$, so $C'_2 \equiv q \vee \neg l$. We can replace those two clauses by the resolution rule with $C'_1 \vee C'_2 \equiv F \vee q \vee \neg l \equiv q \vee \neg l$.
+
+This makes our set of clauses: $\{q \vee \neg l,  r \vee l, \neg r \vee \neg l, \neg r \vee \neg p\}$.
+
+Perform the steps again. $C_1 \equiv q \vee \neg l$, so $C'_1 = q$ and $C_2 \equiv r \vee l$, so $C'_2 \equiv r$. By the resolution rule, $C'_1 \vee C'_2 \equiv q \vee r$.
+
+This makes our set of clauses: $\{q \vee r, \neg r \vee \neg l, \neg r \vee \neg p\}$.
+
+Perform the steps again. $C_1 \equiv q \vee r$, so $C'_1 = q$ and $C_2 \equiv \neg r \vee \neg l$, so $C'_2 \equiv \neg l$. By the resolution rule, $C'_1 \vee C'_2 \equiv q \vee \neg l$.
+
+This makes our set of clauses: $\{q \vee \neg l, \neg r \vee \neg p\}$.
+
+Reconsider our original set of clauses: $\{p \vee q,, \neg q \neg p \vee q \vee \neg l, r \vee l, \neg r \vee \neg l, \neg r \vee \neg p\}$.
+
+Notice that the second clause consists of only $\neg q$. This means that to satisfy it, $q = F$. Looking at our reduced clause set, the first clause states $q \vee \neg l$, and since $q = F$, this means $\neg l = T \Rightarrow l = F$. Back to our original, we know that $p = T$ (by clause 1 and $q = F$), and so $r = F$ (by clause 6 and $p = T$), and so $l = T$ (by clause 4 and $r = F$). However, recall that we had deduced $l = F$ in our reduced form. We have reached a contradiction, and thus, the original set of clauses is unsatisfiable. 
+
+\part{b}
+\part{1}
+\begin{eqnarray*}
+||\bar a \vee b, \bar c \vee d, \bar e \vee \bar f, f \vee \bar e \vee \bar b \Rightarrow (Decide)\\
+a||\bar a \vee b, \bar c \vee d, \bar e \vee \bar f, f \vee \bar e \vee \bar b \Rightarrow (UnitProp)\\
+a,b_{\bar a \vee b}||\bar a \vee b, \bar c \vee d, \bar e \vee \bar f, f \vee \bar e \vee \bar b \Rightarrow (Decide)\\
+a, b_{\bar a \vee b}, c||\bar a \vee b, \bar c \vee d, \bar e \vee \bar f, f \vee \bar e \vee \bar b \Rightarrow (UnitProp)\\
+a, b_{\bar a \vee b}, c, d_{\bar c \vee d}||\bar a \vee b, \bar c \vee d, \bar e \vee \bar f, f \vee \bar e \vee \bar b \Rightarrow (Decide)\\
+a, b_{\bar a \vee b}, c, d_{\bar c \vee d}, e||\bar a \vee b, \bar c \vee d, \bar e \vee \bar f, f \vee \bar e \vee \bar b \Rightarrow (UnitProp)\\
+a, b_{\bar a \vee b}, c, d_{\bar c \vee d}, e||\bar a \vee b, \bar c \vee d, \bar e \vee \bar f, f \vee \bar e \vee \bar b \Rightarrow (Backjump)\\
+a, b_{\bar a \vee b}, c, d_{\bar c \vee d}, e, \bar f_{\bar e \vee \bar f}||\bar a \vee b, \bar c \vee d, \bar e \vee \bar f, f \vee \bar e \vee \bar b \Rightarrow (Backjump)\\
+a, c, d_{\bar c \vee d}, e, \bar f_{\bar e \vee \bar f}||\bar a \vee b, \bar c \vee d, \bar e \vee \bar f, f \vee \bar e \vee \bar b \Rightarrow (UnitProp)\\
+a, \bar b_{f \vee \bar e \vee \bar b}, c, d_{\bar c \vee d}, e, \bar f_{\bar e \vee \bar f}||\bar a \vee b, \bar c \vee d, \bar e \vee \bar f, f \vee \bar e \vee \bar b \Rightarrow (Backjump)\\
+\bar b_{f \vee \bar e \vee \bar b}, c, d_{\bar c \vee d}, e, \bar f_{\bar e \vee \bar f}||\bar a \vee b, \bar c \vee d, \bar e \vee \bar f, f \vee \bar e \vee \bar b \Rightarrow (UnitProp)\\
+\bar a, \bar b_{f \vee \bar e \vee \bar b}, c, d_{\bar c \vee d}, e, \bar f_{\bar e \vee \bar f}||\bar a \vee b, \bar c \vee d, \bar e \vee \bar f, f \vee \bar e \vee \bar b \Rightarrow model \ found\\
+\end{eqnarray*}
+
+\part{2}
+\begin{eqnarray*}
+||a \vee \neg b, \neg a \vee \neg b, b \vee c, \neg c \vee b, a \vee d \Rightarrow (Decide)\\
+a||a \vee \neg b, \neg a \vee \neg b, b \vee c, \neg c \vee b, a \vee d \Rightarrow (UnitProp)\\
+a, \neg b_{\neg a \vee \neg b}||a \vee \neg b, \neg a \vee \neg b, b \vee c, \neg c \vee b, a \vee d \Rightarrow (UnitProp)\\
+a, \neg b_{\neg a \vee \neg b}, c_{b \vee c}||a \vee \neg b, \neg a \vee \neg b, b \vee c, \neg c \vee b, a \vee d \Rightarrow (Conflict, Unsat)\\
+\end{eqnarray*}
+
+This is unsatisfiable because since the clauses $a \vee \bar b$ and $\bar a \vee \bar b$ reduces to $\bar b$, and $b \vee c$ and $b \vee \bar c$ reduces to just $b$. This means we have $b$ and $\bar b$, which is a contradiction. 
 
 \end{document}
