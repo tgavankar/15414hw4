@@ -1,0 +1,105 @@
+% You should title the file with a .tex extension (hw1.tex, for example)
+\documentclass[11pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+
+\oddsidemargin0cm
+\topmargin-2cm         %I recommend adding these three lines to increase the
+\textwidth16.5cm   %amount of usable space on the page (and save trees)
+\textheight23.5cm  
+
+\newcommand{\question}[2] {\vspace{.25in} \hrule\vspace{0.5em}
+\noindent{\bf #1: #2} \vspace{0.5em}
+\hrule \vspace{.10in}}
+\renewcommand{\part}[1] {\vspace{.10in} {\bf (#1)}}
+
+\newcommand{\myname}{Tanay Gavankar}
+\newcommand{\myandrew}{tgavanka@andrew.cmu.edu}
+\newcommand{\myhwnum}{Homework 4}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+
+\pagestyle{fancyplain}
+\lhead{\fancyplain{}{\textbf{HW\myhwnum}}}          % Note the different brackets!
+\rhead{\fancyplain{}{\myname\\ \myandrew}}
+\chead{\fancyplain{}{15-414}}
+
+\begin{document}
+
+\medskip                            % Skip a "medium" amount of space
+                                   % (latex determines what medium is)
+                                   % Also try: \bigskip, \littleskip
+
+
+
+
+\thispagestyle{plain}
+\begin{center}                      % Center the following lines
+{\Large 11-414 Assignment \myhwnum} \\
+\myname \\
+\myandrew \\
+Due: 11/14/12 \\
+\end{center}
+
+
+
+
+\question{1}{Classic Propositional Logic}
+\part{a}
+
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        x & y & z & (x \/ y) -> z & (x -> z) /\ (y -> z) \\ \hline
+        0 & 0 & 0 & 1             & 1                    \\ 
+        0 & 0 & 1 & 1             & 1                    \\ 
+        0 & 1 & 0 & 0             & 0                    \\ 
+        0 & 1 & 1 & 1             & 1                    \\ 
+        1 & 0 & 0 & 0             & 0                    \\ 
+        1 & 0 & 1 & 1             & 1                    \\ 
+        1 & 1 & 0 & 0             & 0                    \\ 
+        1 & 1 & 1 & 1             & 1                    \\
+        \hline
+    \end{tabular}
+
+
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        x & y & z & (x -> y) /\ (z -> x) & z -> y \\ \hline
+        0 & 0 & 0 & 1                    & 1      \\ 
+        0 & 0 & 1 & 0                    & 0      \\ 
+        0 & 1 & 0 & 1                    & 1      \\ 
+        0 & 1 & 1 & 0                    & 1      \\ 
+        1 & 0 & 0 & 0                    & 1      \\ 
+        1 & 0 & 1 & 0                    & 0      \\ 
+        1 & 1 & 0 & 1                    & 1      \\ 
+        1 & 1 & 1 & 1                    & 1      \\
+        \hline
+    \end{tabular}
+
+$x = T$, $y = T$, $z = T$ satisfies both. 
+
+\part{b}
+
+\part{c}
+
+
+\question{2}{Normal Forms}
+\part{a}
+\part{1}
+
+\part{2}
+
+\part{3}
+
+\part{b}
+\part{1}
+\part{2}
+
+\question{3}{Satisfiability Checking}
+
+
+\end{document}
