@@ -53,7 +53,7 @@ Due: 11/14/12 \\
 
     \begin{tabular}{|c|c|c|c|c|}
         \hline
-        x & y & z & (x \/ y) -> z & (x -> z) /\ (y -> z) \\ \hline
+        $x$ & $y$ & $z$ & $(x \vee y) \rightarrow z$ & $(x \rightarrow z) \wedge (y \rightarrow z)$ \\ \hline
         0 & 0 & 0 & 1             & 1                    \\ 
         0 & 0 & 1 & 1             & 1                    \\ 
         0 & 1 & 0 & 0             & 0                    \\ 
@@ -64,11 +64,13 @@ Due: 11/14/12 \\
         1 & 1 & 1 & 1             & 1                    \\
         \hline
     \end{tabular}
+	
 
+\part{b}
 
     \begin{tabular}{|c|c|c|c|c|}
         \hline
-        x & y & z & (x -> y) /\ (z -> x) & z -> y \\ \hline
+        $x$ & $y$ & $z$ & $(x \rightarrow y) \wedge (z \rightarrow x)$ & $z \rightarrow y$ \\ \hline
         0 & 0 & 0 & 1                    & 1      \\ 
         0 & 0 & 1 & 0                    & 0      \\ 
         0 & 1 & 0 & 1                    & 1      \\ 
@@ -82,22 +84,58 @@ Due: 11/14/12 \\
 
 $x = T$, $y = T$, $z = T$ satisfies both. 
 
-\part{b}
-
 \part{c}
+Consider $x=F$, $y=1$, $z=1$. In this case, the first statement is false while the second is true.
 
 
 \question{2}{Normal Forms}
 \part{a}
 \part{1}
+\begin{eqnarray*}
+\neg (p \leftrightarrow q)\\
+\neg ((p \wedge q) \vee (\neg p \wedge \neg q))\\
+\neg (p \wedge q) \wedge \neg (\neg p \wedge \neg q)\\
+(\neg p \vee \neg q) \wedge (\neg \neg p \vee \neg \neg q)\\
+(\neg p \vee \neg q) \wedge (p \vee q)\\
+\end{eqnarray*}
 
 \part{2}
+\begin{eqnarray*}
+\neg(p \vee (\neg q \wedge r))\\
+\neg p \wedge \neg (\neg q \wedge r)\\
+\neg p \wedge (\neg \neg q \vee \neg r)\\
+\neg p \wedge (q \vee \neg r)\\
+\end{eqnarray*}
 
 \part{3}
+\begin{eqnarray*}
+\neg (\neg(p \rightarrow q) \rightarrow (p \rightarrow \neg q))\\
+\neg (\neg \neg(p \rightarrow q) \vee (p \rightarrow \neg q))\\
+\neg ((p \rightarrow q) \vee (p \rightarrow \neg q))\\
+\neg (p \rightarrow q) \wedge \neg (p \rightarrow \neg q)\\
+\neg (\neg p \vee q) \wedge \neg (\neg p \vee \neg q)\\
+(\neg \neg p \wedge \neg q) \wedge (\neg \neg p \wedge \neg \neg q)\\
+(p \wedge \neg q) \wedge (p \wedge q)\\
+\end{eqnarray*}
 
 \part{b}
 \part{1}
+\begin{eqnarray*}
+(p_1 \wedge q_1) \vee (p_2 \wedge \neg q_2) \vee (\neg p_3 \wedge \neg q_3)\\
+\\
+\equiv ((p_1 \vee p_2) \wedge (p_1 \vee \neg q_2) \wedge (q_1 \vee p_2) \wedge (q_1 \vee \neg q_2)) \vee (\neg p_3 \wedge \neg q_3)\\
+\\
+\equiv (((p_1 \vee p_2) \vee \neg p_3) \wedge ((p_1 \vee p_2) \vee \neg q_3) \wedge ((p_1 \vee \neg q_2) \vee \neg p_3)\\
+\wedge ((q_1 \vee p_2) \vee \neg q_3) \wedge ((q_1 \vee \neg q_2) \vee \neg p_3) \wedge ((q_1 \vee \neg q_2) \vee \neg q_3)\\
+\\
+\equiv ((p_1 \vee p_2 \vee \neg p_3) \wedge (p_1 \vee p_2 \vee \neg q_3) \wedge (p_1 \vee \neg q_2 \vee \neg p_3)\\
+\wedge (q_1 \vee p_2 \vee \neg q_3) \wedge (q_1 \vee \neg q_2 \vee \neg p_3) \wedge (q_1 \vee \neg q_2 \vee \neg q_3)\\
+\end{eqnarray*}
+
 \part{2}
+\begin{eqnarray*}
+((p_1 \vee \neg p_2) \wedge (\neg p_3 \vee p_4)) \leftrightarrow (p_5 \wedge \neg p_6)\\
+\end{eqnarray*}
 
 \question{3}{Satisfiability Checking}
 
